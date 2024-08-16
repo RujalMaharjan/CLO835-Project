@@ -12,6 +12,3 @@ kubectl delete pv --all
 kubectl delete configmap --all -n $namespace
 kubectl delete secret --all -n $namespace
 
-# Optionally, delete Ingress and NetworkPolicies if they exist
-kubectl delete ingress --all -n $namespace
-kubectl delete networkpolicy --all -n $namespace

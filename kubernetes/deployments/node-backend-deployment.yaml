@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: rujalmhn/project-node:v1.0
+          image: rujalmhn/project-node:v1.1
           envFrom:
             - configMapRef:
                 name: node-config

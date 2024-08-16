@@ -15,18 +15,16 @@ kubectl get services -n fullstack-app
 
 # Port forwarding for local access
 kubectl port-forward service/nginx-service 8080:80 -n fullstack-app
-kubectl port-forward service/node-service 8081:80 -n fullstack-app
+kubectl port-forward service/node-service 8081:3000 -n fullstack-app
+
 
 # Monitor logs
 kubectl logs <pod-name> -n fullstack-app
 
 # Scale deployments
-kubectl scale deployment node-backend --replicas=3 -n fullstack-app
-kubectl scale deployment nginx --replicas=3 -n fullstack-app
+kubectl scale deployment node-app --replicas=3 -n fullstack-app
+kubectl scale deployment nginx-app --replicas=3 -n fullstack-app
 
 # Rollout updates
-kubectl rollout restart deployment node-backend -n fullstack-app
-kubectl rollout restart deployment nginx -n fullstack-app
-
-kubectl port-forward service/nginx-service 8080:80 -n fullstack-app
-kubectl port-forward service/node-service 8081:80 -n fullstack-app
+kubectl rollout restart deployment node-app -n fullstack-app
+kubectl rollout restart deployment nginx-app -n fullstack-app
