@@ -87,3 +87,15 @@ kubectl rollout restart deployment nginx-app -n fullstack-app
 ```SHELL
 docker ps
 ```
+
+```SHELL
+# Define the namespace
+$namespace = "fullstack-app"
+
+# Delete all resources in the namespace
+kubectl delete all --all -n $namespace
+
+# Delete persistent volumes and persistent volume claims
+kubectl delete pvc --all -n $namespace
+kubectl delete pv --all
+```
