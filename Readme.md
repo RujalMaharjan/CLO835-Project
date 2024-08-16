@@ -49,3 +49,7 @@ minikube service nginx-service -n fullstack-app --url
 docker ps
 ```
 
+wget -qO- http://node-service:3000
+
+
+mongoose.connect('mongodb://mongodb:27017/mydb', { useNewUrlParser: true, useUnifiedTopology: true });

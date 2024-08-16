@@ -21,3 +21,6 @@ spec:
                 name: node-config
           ports:
             - containerPort: 3000
+          env:
+          - name: MONGO_URI
+            value: mongodb://mongodb:27017/mydb

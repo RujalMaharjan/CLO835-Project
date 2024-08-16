@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -37,11 +38,17 @@ app.post('/data', async (req, res) => {
   }
 });
 
+const exampleSchema = new Schema({
+  name: String,
+  age: Number
+});
+const Example = mongoose.model('Example', exampleSchema);
+
 // Endpoint to retrieve data
-app.get('/data', async (req, res) => {
+app.get('/data/rujal1', async (req, res) => {
   try {
-    const items = await Item.find();
-    res.send(items);
+    const data = await Example.find();
+    res.send(data);
   } catch (err) {
     res.status(500).send('Error retrieving data');
   }
